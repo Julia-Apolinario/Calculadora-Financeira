@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora Financeira</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <center>
+        <div class="card">
+            <h1> HDP (Historical Document Preservation) </h1>
+            <h2> Calcule o quanto você iria economizar contratando os nossos serviços!</h2><br><br>
+            <b> Em um período de 6 meses, quantos documentos você coloca para a restauração?<input type="text" id="input_documentos"></b><br>
+            <b> Quanto custa cada restauração por peça? <input type="text" id="input_restauracao"></b><br>
+            <br><button onclick="calcular()"> Veja o quanto irá economizar!</button>
+            <div id="div_mensagem"></div>
+        </div>
+    </center>
+    <script>
+        function calcular() {
+            var qtdDocumento = Number(input_documentos.value);
+            var valorRestauracao = Number(input_restauracao.value);
+            var valorSemestral = qtdDocumento * valorRestauracao;
+            var economia = valorSemestral * 0.60;
+            div_mensagem.innerHTML = `Se você contratar os nossos produtos (sensor de temperatura e umidade) vai ter uma redução de custo de <b>R$${economia}</b> reais!!`;
+        }
+    </script>
+</body>
+</html>
